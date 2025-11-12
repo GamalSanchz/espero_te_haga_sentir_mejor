@@ -327,3 +327,52 @@ body{
 .modal-actions .secondary{
   background: #f0ece7; color:#3a3a3a; box-shadow: none; margin-right: 6px;
 }
+
+.modal-content {
+  animation: fadeInUp .5s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,240,230,0.85), rgba(0,0,0,0.45));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+/* Centrado y tamaño responsive de botones */
+#closeBtn,
+.modal-actions button {
+  width: auto;
+  min-width: 140px;
+  justify-self: center;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  #closeBtn,
+  .modal-actions button {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .modal-content {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .message-box {
+    font-size: 14.5px;
+    line-height: 1.65;
+    max-height: 320px;
+  }
+}
+
